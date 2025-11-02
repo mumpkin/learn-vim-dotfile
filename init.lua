@@ -1,4 +1,4 @@
-vim.api.nvim_set_hl(0, "Comment", { italic = true })
+-- Minimalist config also available on Vim
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -18,6 +18,8 @@ vim.opt.listchars = {
 	trail = "•",
 }
 
+-- Packages management (Neovim 0.12+ required)
+
 vim.pack.add({
 	{
 		src = "https://github.com/m4xshen/hardtime.nvim",
@@ -36,4 +38,11 @@ require("hardtime").setup()
 require("precognition").setup({
 	highlightColor = { link = "Comment" },
 })
+vim.api.nvim_set_hl(0, "Comment", { italic = true })
 
+-- Bindings
+
+vim.g.mapleader = ' '
+vim.keymap.set('n', '<leader>p', function()
+	require("precognition").toggle()
+end, { desc = "Toggle Precognition" })

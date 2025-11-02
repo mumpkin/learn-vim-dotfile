@@ -53,5 +53,3 @@ git clone https://github.com/mumpkin/learn-vim-dotfile ~/.config/nvim
 ```
 
 Now open Neovim and start learning! 💪
-
-```
